@@ -36,8 +36,12 @@
 }
 
 @keyframes cloud-1 {
-    0%{right: 400px;}
-    50%{color: red;}
+  0% {
+    right: 400px;
+  }
+  50% {
+    color: red;
+  }
 }
 
 .cloud-2 {
@@ -45,6 +49,19 @@
   left: 400px;
   height: 80px;
   opacity: 0.6;
+  animation: 1cloud;
+  animation-name: cloud-1;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloud-1 {
+  0% {
+    right: 400px;
+  }
+  50% {
+    color: red;
+  }
 }
 
 .ground {
@@ -346,7 +363,7 @@ h1 {
   height: 250px;
   width: 480px;
   border-radius: 30px 60px 3px 0px;
-  animation-name: movebus;
+  animation-name: moveUpDown, goLeft;
   animation-duration: 1s;
   animation-direction: alternate-reverse;
   animation-iteration-count: infinite;
@@ -359,9 +376,39 @@ h1 {
 
 @keyframes movebus {
   0% {
-    right: 400px;
+    right-margin: 0%;
   }
-  30% {
-    top: 70px;
+  100% {
+    right-margin: 25%;
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 10px;
+  }
+}
+
+@keyframes goLeft {
+  from {
+    margin-right: 0%;
+    left: 450px;
+  }
+  to {
+    margin-right: 20%;
+    left: 0px;
+  }
+}
+
+@keyframes wheels{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
